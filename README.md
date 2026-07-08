@@ -1,0 +1,2 @@
+# hospitality
+Hospitality showcase page
