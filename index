@@ -1,0 +1,338 @@
+<!--
+  333 HOSPITALITY — standalone micro page
+  ============================================================
+  Curated experiences: weddings, festivals, brand dinners, tech
+  company dinners. Allergen-first, space design + partner kitchens.
+
+  To use: paste this whole block into a new Shopify page template
+  (Custom Liquid section), or host as its own page at /hospitality
+  or /events. Self-contained — no dependency on the directory JS.
+
+  REPLACE BEFORE LAUNCH:
+  - All .ph-photo placeholder divs -> real <img> tags
+  - The inquiry button href -> real contact form / email
+============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+#h333-wrap{
+  --cream:#f8f8f0;
+  --ink:#1c1a16;
+  --ink-soft:rgba(28,26,22,.6);
+  --ink-faint:rgba(28,26,22,.4);
+  --charcoal:#211f1b;
+  --terracotta:#e25036;
+  --brass:#a97c3f;
+  --brass-light:#e4c99a;
+  --burgundy:#4a2226;
+  --paper:#efe9db;
+  font-family:"DM Sans",-apple-system,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+}
+#h333-wrap *{box-sizing:border-box;}
+#h333-wrap .disp{font-family:"Fraunces",Georgia,serif;}
+
+#h333-wrap section{padding:6rem 6vw;}
+@media(max-width:600px){
+  #h333-wrap section{padding:4rem 6vw;}
+  .h333-hero img[alt="333"]{width:48px;top:24px;}
+}
+
+/* ---------- HERO ---------- */
+.h333-hero{
+  background:var(--charcoal);
+  color:var(--cream);
+  min-height:78vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:8rem;padding-bottom:5rem;
+  position:relative;
+  overflow:hidden;
+}
+.h333-hero__eyebrow{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brass-light);font-weight:500;margin-bottom:2rem;
+}
+.h333-hero__title{
+  font-size:clamp(42px,7vw,96px);
+  font-weight:400;font-style:italic;line-height:1.02;letter-spacing:-.02em;
+  max-width:920px;margin-bottom:1.75rem;
+}
+.h333-hero__title em{font-style:normal;color:var(--brass-light);}
+.h333-hero__sub{
+  font-size:16px;line-height:1.7;color:rgba(248,248,240,.65);
+  max-width:460px;
+}
+.h333-hero__index{
+  margin-top:3.5rem;
+  display:flex;flex-wrap:wrap;gap:0 2.5rem;
+}
+.h333-hero__index span{
+  font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(248,248,240,.4);
+  padding-bottom:6px;border-bottom:1px solid rgba(248,248,240,.15);
+}
+
+/* ---------- PHILOSOPHY (asymmetric photo pair, brand-consistent) ---------- */
+.h333-phil{
+  display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;
+}
+@media(max-width:800px){.h333-phil{grid-template-columns:1fr;}}
+.h333-phil__eyebrow{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terracotta);font-weight:600;margin-bottom:1rem;
+}
+.h333-phil__title{
+  font-size:clamp(26px,3.2vw,40px);font-weight:400;letter-spacing:-.02em;
+  line-height:1.15;margin-bottom:1.25rem;
+}
+.h333-phil__body{font-size:15px;line-height:1.75;color:var(--ink-soft);max-width:440px;}
+.h333-phil__photos{display:flex;gap:14px;}
+.ph-photo{flex:1;border-radius:4px;display:flex;align-items:flex-end;padding:14px;
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.ph-photo.a{height:320px;background:var(--burgundy);}
+.ph-photo.b{height:320px;margin-top:44px;background:var(--brass);}
+@media(max-width:800px){.ph-photo.a,.ph-photo.b{height:220px;margin-top:0;}}
+
+/* ---------- OCCASIONS — place-card signature ---------- */
+.h333-occ{background:var(--paper);}
+.h333-occ__head{max-width:560px;margin-bottom:3.5rem;}
+.h333-occ__eyebrow{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terracotta);font-weight:600;margin-bottom:1rem;
+}
+.h333-occ__title{font-size:clamp(26px,3.2vw,38px);font-weight:400;letter-spacing:-.02em;line-height:1.15;}
+.h333-occ__grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;
+}
+@media(max-width:900px){.h333-occ__grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.h333-occ__grid{grid-template-columns:1fr;}}
+.h333-card{
+  background:var(--cream);
+  border:1px solid rgba(28,26,22,.12);
+  padding:28px 22px 24px;
+  transform:rotate(var(--tilt,-1.1deg));
+  transition:transform .2s ease;
+  position:relative;
+}
+.h333-card:nth-child(2n){--tilt:0.9deg;}
+.h333-card:nth-child(3n){--tilt:-0.6deg;}
+.h333-card:hover{transform:rotate(0deg);}
+.h333-card__num{
+  font-family:"Fraunces",Georgia,serif;font-style:italic;
+  font-size:13px;color:var(--terracotta);margin-bottom:14px;
+}
+.h333-card__title{font-size:19px;font-weight:400;letter-spacing:-.01em;margin-bottom:8px;
+  font-family:"Fraunces",Georgia,serif;}
+.h333-card__body{font-size:12.5px;line-height:1.6;color:var(--ink-soft);}
+
+/* ---------- PROCESS ---------- */
+.h333-process__head{max-width:520px;margin-bottom:3rem;}
+.h333-process__eyebrow{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terracotta);font-weight:600;margin-bottom:1rem;
+}
+.h333-process__title{font-size:clamp(26px,3.2vw,38px);font-weight:400;letter-spacing:-.02em;line-height:1.15;}
+.h333-process__row{
+  display:flex;
+  gap:32px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:6vw;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding-bottom:6px;
+}
+.h333-process__row::-webkit-scrollbar{display:none;}
+.h333-step{
+  flex:0 0 auto;
+  width:min(78vw,280px);
+  scroll-snap-align:start;
+  border-top:1px solid rgba(28,26,22,.15);
+  padding-top:20px;
+}
+.h333-step__num{
+  font-family:"Fraunces",Georgia,serif;font-style:italic;
+  font-size:34px;color:var(--brass);line-height:1;margin-bottom:14px;
+}
+.h333-step__title{font-size:16px;font-weight:500;margin-bottom:8px;}
+.h333-step__body{font-size:13px;line-height:1.65;color:var(--ink-soft);max-width:280px;}
+
+/* ---------- CTA ---------- */
+.h333-cta{
+  background:var(--charcoal);color:var(--cream);text-align:center;
+}
+.h333-cta__title{
+  font-family:"Fraunces",Georgia,serif;font-style:italic;
+  font-size:clamp(28px,4vw,48px);font-weight:400;letter-spacing:-.02em;
+  max-width:640px;margin:0 auto 1.25rem;line-height:1.2;
+}
+.h333-cta__sub{font-size:14px;color:rgba(248,248,240,.55);margin-bottom:2.25rem;}
+.h333-cta__btn{
+  display:inline-block;background:var(--brass-light);color:var(--charcoal);
+  font-size:13px;font-weight:600;padding:14px 32px;border-radius:999px;
+  text-decoration:none;letter-spacing:.02em;transition:opacity .15s;
+}
+.h333-cta__btn:hover{opacity:.85;}
+.h333-cta__note{font-size:12px;color:rgba(248,248,240,.35);margin-top:1.25rem;}
+</style>
+
+<div id="h333-wrap">
+
+  <section class="h333-hero">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0810/9395/1777/files/LOGOGREEN111LARGE.png?v=1708543327&width=180"
+      srcset=","
+        https://cdn.shopify.com/s/files/1/0810/9395/1777/files/LOGOGREEN111LARGE.png?v=1708543327&width=120 120w
+        https://cdn.shopify.com/s/files/1/0810/9395/1777/files/LOGOGREEN111LARGE.png?v=1708543327&width=180 180w
+      sizes="120px"
+      alt="333"
+      style="position:absolute;top:32px;left:6vw;height:auto;width:64px;z-index:2;">
+    <p class="h333-hero__eyebrow">333 Hospitality</p>
+    <h1 class="h333-hero__title">Dietary needs &amp; aesthetic<br>hospitality<em>, perfected for you.</em></h1>
+    <p class="h333-hero__sub">Curated meals, spaces, and experiences built around real dietary needs from the start — not worked around as an afterthought.</p>
+    <div class="h333-hero__index">
+      <span>Weddings</span>
+      <span>Festivals</span>
+      <span>Brand dinners</span>
+      <span>Tech company dinners</span>
+    </div>
+  </section>
+
+  <section class="h333-phil">
+    <div>
+      <p class="h333-phil__eyebrow">The approach</p>
+      <h2 class="h333-phil__title">Allergen-first, not allergen-accommodated.</h2>
+      <p class="h333-phil__body">Every menu starts from what our partner kitchens already do best — vegan, gluten-free, and allergen-conscious cooking that was never an asterisk on someone else's menu. We pair that with real space design, so the room feels as considered as the plate. Same curation instinct behind 333's everyday partners, applied to the room you'll remember.</p>
+    </div>
+    <div class="h333-phil__photos">
+      <div class="ph-photo a" style="background:none;padding:0;">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_2.12.51_PM.png?v=1783383200&width=800"
+          srcset=",,"
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_2.12.51_PM.png?v=1783383200&width=450 450w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_2.12.51_PM.png?v=1783383200&width=800 800w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_2.12.51_PM.png?v=1783383200&width=1200 1200w
+          sizes="(max-width:800px) 100vw, 50vw"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;" alt="Plates on film">
+      </div>
+      <div class="ph-photo b" style="background:none;padding:0;">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.55.05_PM.png?v=1783383232&width=800"
+          srcset=",,"
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.55.05_PM.png?v=1783383232&width=450 450w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.55.05_PM.png?v=1783383232&width=800 800w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.55.05_PM.png?v=1783383232&width=1200 1200w
+          sizes="(max-width:800px) 100vw, 50vw"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;" alt="Vegan buffet spread">
+      </div>
+    </div>
+  </section>
+
+  <section class="h333-occ">
+    <div class="h333-occ__head">
+      <p class="h333-occ__eyebrow">Occasions</p>
+      <h2 class="h333-occ__title">Built for the room you're actually hosting.</h2>
+    </div>
+    <div class="h333-occ__grid">
+      <div class="h333-card">
+        <p class="h333-card__num">No. 1</p>
+        <p class="h333-card__title">Weddings</p>
+        <p class="h333-card__body">Full-menu and full-room curation for couples who want every guest — allergies included — to have an equally considered plate.</p>
+      </div>
+      <div class="h333-card">
+        <p class="h333-card__num">No. 2</p>
+        <p class="h333-card__title">Festivals</p>
+        <p class="h333-card__body">Multi-day, high-volume activations pulling from our founding partner kitchens, built for real crowds without cutting the quality bar.</p>
+      </div>
+      <div class="h333-card">
+        <p class="h333-card__num">No. 3</p>
+        <p class="h333-card__title">Brand dinners</p>
+        <p class="h333-card__body">Intimate, editorial-grade dinners for brands who want a room and a menu that actually reflect what they stand for.</p>
+      </div>
+      <div class="h333-card">
+        <p class="h333-card__num">No. 4</p>
+        <p class="h333-card__title">Tech company dinners</p>
+        <p class="h333-card__body">Offsite and all-hands dinners built around real dietary diversity — no more one sad plate at the end of the buffet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper);">
+    <div style="max-width:640px;margin:0 auto 3rem;text-align:center;">
+      <p class="h333-phil__eyebrow">The atmosphere</p>
+      <h2 class="h333-phil__title">Sound, curated like the menu.</h2>
+      <p class="h333-phil__body" style="margin:0 auto;">Every 333 dinner can be built as a listening session — sound chosen to match the room, the courses, and the pace of the night, the same way we choose the food. Available as an add-on across weddings, brand dinners, and private events, or as the whole occasion itself.</p>
+    </div>
+    <div class="h333-phil__photos" style="max-width:1100px;margin:0 auto;">
+      <div class="ph-photo a" style="background:none;padding:0;">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.47.49_PM.png?v=1783383240&width=900"
+          srcset=",,"
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.47.49_PM.png?v=1783383240&width=500 500w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.47.49_PM.png?v=1783383240&width=900 900w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/Screenshot_2026-07-06_at_1.47.49_PM.png?v=1783383240&width=1400 1400w
+          sizes="(max-width:700px) 100vw, 50vw"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;" alt="Wide table setting">
+      </div>
+      <div class="ph-photo b" style="background:none;padding:0;">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0810/9395/1777/files/IMG_4983_2.jpg?v=1783451634&width=900"
+          srcset=",,"
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/IMG_4983_2.jpg?v=1783451634&width=500 500w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/IMG_4983_2.jpg?v=1783451634&width=900 900w
+            https://cdn.shopify.com/s/files/1/0810/9395/1777/files/IMG_4983_2.jpg?v=1783451634&width=1400 1400w
+          sizes="(max-width:700px) 100vw, 50vw"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;" alt="Listening session setup">
+      </div>
+    </div>
+  </section>
+
+  <section class="h333-process">
+    <div class="h333-process__head">
+      <p class="h333-process__eyebrow">How it works</p>
+      <h2 class="h333-process__title">By inquiry — every event is built from scratch.</h2>
+    </div>
+    <div style="position:relative;">
+      <div class="h333-process__row">
+        <div class="h333-step">
+          <p class="h333-step__num">01</p>
+          <p class="h333-step__title">Inquire</p>
+          <p class="h333-step__body">Tell us the occasion, guest count, and any dietary needs the room is already carrying.</p>
+        </div>
+        <div class="h333-step">
+          <p class="h333-step__num">02</p>
+          <p class="h333-step__title">Curate</p>
+          <p class="h333-step__body">We build the menu from our vetted partner kitchens and design the space around it.</p>
+        </div>
+        <div class="h333-step">
+          <p class="h333-step__num">03</p>
+          <p class="h333-step__title">Set the sound</p>
+          <p class="h333-step__body">Layer in a hi-fi sound system, custom playlists, or our network of vinyl selectors and indie musicians — as much or as little as the occasion calls for.</p>
+        </div>
+        <div class="h333-step">
+          <p class="h333-step__num">04</p>
+          <p class="h333-step__title">Host</p>
+          <p class="h333-step__body">We run the day — food, space, and every guest's plate handled with the same care.</p>
+        </div>
+      </div>
+      <div style="position:absolute;top:0;right:0;bottom:6px;width:48px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cream));"></div>
+    </div>
+  </section>
+
+  <section class="h333-cta">
+    <h2 class="h333-cta__title">Limited availability, by inquiry only.</h2>
+    <p class="h333-cta__sub">Currently booking across Los Angeles, with select dates in New York and San Diego.</p>
+    <a class="h333-cta__btn" href="#inquire">Start an inquiry &#8594;</a>
+    <p class="h333-cta__note">Response within 2–3 business days.</p>
+  </section>
+
+</div>
